@@ -154,7 +154,7 @@ const FeedbackHeader = () => (
         </p>
         <p className="text-[8px] sm:text-xs md:text-sm">Magsija, Balilihan 6342, Bohol, Philippines</p>
         <p className="text-[8px] sm:text-xs md:text-sm">
-          Personnel and Human Resource Management Office
+          Human Resource Management Office
         </p>
         <p className="font-serif text-[8px] italic sm:text-xs md:text-sm">
           Balance | Integrity | Stewardship | Uprightness
@@ -400,7 +400,7 @@ const Satisfaction = () => {
         setManualTokenRecord(null);
         setManualTokenError(
           validationError?.message ||
-            "This manual feedback QR approval could not be validated."
+          "This manual feedback QR approval could not be validated."
         );
         sessionStorage.removeItem(MANUAL_SESSION_FLAG_KEY);
       } finally {
@@ -462,11 +462,11 @@ const Satisfaction = () => {
           return !usesApplicationFormRules
             ? { ...prev, cc1: CC_NOT_AWARE_VALUE }
             : {
-                ...prev,
-                cc1: CC_NOT_AWARE_VALUE,
-                cc2: CC2_NA_VALUE,
-                cc3: CC3_NA_VALUE,
-              };
+              ...prev,
+              cc1: CC_NOT_AWARE_VALUE,
+              cc2: CC2_NA_VALUE,
+              cc3: CC3_NA_VALUE,
+            };
         }
 
         const nextCc1 = isTogglingOff ? "" : optionValue;
@@ -730,11 +730,10 @@ const Satisfaction = () => {
                   onChange={(event) => setDateOfVisit(event.target.value)}
                   readOnly={dateTimeLocked}
                   tabIndex={dateTimeLocked ? -1 : undefined}
-                  className={`${metadataFieldClass} ${
-                    dateTimeLocked
-                      ? "cursor-default bg-[#f3f3f3] text-[#4f4f4f] focus:border-[#b9b9b9] focus:ring-0"
-                      : ""
-                  }`}
+                  className={`${metadataFieldClass} ${dateTimeLocked
+                    ? "cursor-default bg-[#f3f3f3] text-[#4f4f4f] focus:border-[#b9b9b9] focus:ring-0"
+                    : ""
+                    }`}
                 />
               </label>
 
@@ -746,11 +745,10 @@ const Satisfaction = () => {
                   onChange={(event) => setTimeOfVisit(event.target.value)}
                   readOnly={dateTimeLocked}
                   tabIndex={dateTimeLocked ? -1 : undefined}
-                  className={`${metadataFieldClass} ${
-                    dateTimeLocked
-                      ? "cursor-default bg-[#f3f3f3] text-[#4f4f4f] focus:border-[#b9b9b9] focus:ring-0"
-                      : ""
-                  }`}
+                  className={`${metadataFieldClass} ${dateTimeLocked
+                    ? "cursor-default bg-[#f3f3f3] text-[#4f4f4f] focus:border-[#b9b9b9] focus:ring-0"
+                    : ""
+                    }`}
                 />
               </label>
             </div>
@@ -758,9 +756,8 @@ const Satisfaction = () => {
             <div className="grid grid-cols-1 xl:grid-cols-2 gap-4">
               <fieldset>
                 <div
-                  className={`flex flex-wrap items-center gap-x-4 gap-y-1 text-sm text-[#2f2f2f] rounded-md px-2 py-1 ${
-                    validationErrors.clientType ? "border border-red-400 bg-red-50" : ""
-                  }`}
+                  className={`flex flex-wrap items-center gap-x-4 gap-y-1 text-sm text-[#2f2f2f] rounded-md px-2 py-1 ${validationErrors.clientType ? "border border-red-400 bg-red-50" : ""
+                    }`}
                 >
                   <span className={metadataLabelClass}>Client Type:</span>
                   {["Citizen", "Business", "Government"].map((option) => (
@@ -785,9 +782,8 @@ const Satisfaction = () => {
 
               <fieldset>
                 <div
-                  className={`flex flex-wrap items-center gap-4 text-sm text-[#2f2f2f] rounded-md px-2 py-1 ${
-                    validationErrors.sex ? "border border-red-400 bg-red-50" : ""
-                  }`}
+                  className={`flex flex-wrap items-center gap-4 text-sm text-[#2f2f2f] rounded-md px-2 py-1 ${validationErrors.sex ? "border border-red-400 bg-red-50" : ""
+                    }`}
                 >
                   <span className={metadataLabelClass}>Sex:</span>
                   {["Male", "Female"].map((option) => (
@@ -826,11 +822,10 @@ const Satisfaction = () => {
                     clearValidationError("region");
                     setRegion(event.target.value);
                   }}
-                  className={`w-full appearance-none rounded-md border bg-transparent px-3 pr-10 py-2.5 text-sm sm:text-base text-[#1f1f1f] outline-none ${
-                    validationErrors.region
-                      ? "border-red-500 focus:border-red-500"
-                      : "border-[#575757] focus:border-[#4b4b4b]"
-                  }`}
+                  className={`w-full appearance-none rounded-md border bg-transparent px-3 pr-10 py-2.5 text-sm sm:text-base text-[#1f1f1f] outline-none ${validationErrors.region
+                    ? "border-red-500 focus:border-red-500"
+                    : "border-[#575757] focus:border-[#4b4b4b]"
+                    }`}
                 >
                   {regionOptions.map((option) => (
                     <option key={option} value={option}>
@@ -857,11 +852,10 @@ const Satisfaction = () => {
                     setOfficeVisited(event.target.value);
                   }}
                   disabled={officeSelectLocked}
-                  className={`w-full appearance-none rounded-md border bg-transparent px-3 pr-10 py-2.5 text-sm sm:text-base text-[#1f1f1f] outline-none ${
-                    validationErrors.officeVisited
-                      ? "border-red-500 focus:border-red-500"
-                      : "border-[#575757] focus:border-[#4b4b4b]"
-                  } ${officeSelectLocked ? "cursor-not-allowed bg-[#f3f3f3] text-[#5f5f5f]" : ""}`}
+                  className={`w-full appearance-none rounded-md border bg-transparent px-3 pr-10 py-2.5 text-sm sm:text-base text-[#1f1f1f] outline-none ${validationErrors.officeVisited
+                    ? "border-red-500 focus:border-red-500"
+                    : "border-[#575757] focus:border-[#4b4b4b]"
+                    } ${officeSelectLocked ? "cursor-not-allowed bg-[#f3f3f3] text-[#5f5f5f]" : ""}`}
                 >
                   <option value="">
                     {isManualEntryMode
@@ -870,8 +864,8 @@ const Satisfaction = () => {
                   </option>
                   {isSelectableOffice(officeVisited) &&
                     !officeOptions.includes(officeVisited) && (
-                    <option value={officeVisited}>{officeVisited}</option>
-                  )}
+                      <option value={officeVisited}>{officeVisited}</option>
+                    )}
                   {officeOptions.map((option) => (
                     <option key={option} value={option}>
                       {option}
@@ -893,11 +887,10 @@ const Satisfaction = () => {
                     setServicesAvailed(event.target.value);
                   }}
                   placeholder="Type here..."
-                  className={`${metadataFieldClass} ${
-                    validationErrors.servicesAvailed
-                      ? "border-red-500 focus:border-red-500 focus:ring-red-200"
-                      : ""
-                  }`}
+                  className={`${metadataFieldClass} ${validationErrors.servicesAvailed
+                    ? "border-red-500 focus:border-red-500 focus:ring-red-200"
+                    : ""
+                    }`}
                 />
               </label>
 
@@ -911,11 +904,10 @@ const Satisfaction = () => {
                     setServicedBy(event.target.value);
                   }}
                   placeholder="Type here..."
-                  className={`${metadataFieldClass} ${
-                    validationErrors.servicedBy
-                      ? "border-red-500 focus:border-red-500 focus:ring-red-200"
-                      : ""
-                  }`}
+                  className={`${metadataFieldClass} ${validationErrors.servicedBy
+                    ? "border-red-500 focus:border-red-500 focus:ring-red-200"
+                    : ""
+                    }`}
                 />
               </label>
             </div>
@@ -933,9 +925,8 @@ const Satisfaction = () => {
               {citizensCharterQuestions.map((question) => (
                 <section
                   key={question.id}
-                  className={`rounded-md px-2 py-1 ${
-                    validationErrors[question.id] ? "border border-red-400 bg-red-50/70" : ""
-                  }`}
+                  className={`rounded-md px-2 py-1 ${validationErrors[question.id] ? "border border-red-400 bg-red-50/70" : ""
+                    }`}
                 >
                   <div className="flex flex-col sm:flex-row sm:items-start gap-1 sm:gap-3 mb-2">
                     <span className="text-sm sm:text-base font-semibold text-[#1f1f1f] leading-none sm:pt-[2px]">
@@ -956,11 +947,10 @@ const Satisfaction = () => {
                       return (
                         <label
                           key={option.value}
-                          className={`inline-flex items-start gap-2 text-xs sm:text-sm leading-snug ${
-                            disabledByCc1
-                              ? "cursor-not-allowed text-[#737373]"
-                              : "cursor-pointer text-[#2f2f2f]"
-                          }`}
+                          className={`inline-flex items-start gap-2 text-xs sm:text-sm leading-snug ${disabledByCc1
+                            ? "cursor-not-allowed text-[#737373]"
+                            : "cursor-pointer text-[#2f2f2f]"
+                            }`}
                         >
                           <input
                             type="checkbox"
@@ -1058,17 +1048,16 @@ const Satisfaction = () => {
               type="button"
               onClick={handleSubmit}
               disabled={submitting || loadingVisitOffice || validatingManualToken}
-              className={`w-full mt-5 rounded-lg bg-[#552b98] text-white py-3 sm:py-3.5 font-bold tracking-wide transition ${
-                submitting || loadingVisitOffice || validatingManualToken
-                  ? "opacity-70 cursor-not-allowed"
-                  : "hover:bg-[#45207e]"
-              }`}
+              className={`w-full mt-5 rounded-lg bg-[#552b98] text-white py-3 sm:py-3.5 font-bold tracking-wide transition ${submitting || loadingVisitOffice || validatingManualToken
+                ? "opacity-70 cursor-not-allowed"
+                : "hover:bg-[#45207e]"
+                }`}
             >
               {submitting
                 ? "Submitting..."
                 : validatingManualToken
                   ? "Validating QR..."
-                : loadingVisitOffice
+                  : loadingVisitOffice
                     ? "Loading visit..."
                     : "SUBMIT FEEDBACK"}
             </button>
