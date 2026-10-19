@@ -278,7 +278,6 @@ const Satisfaction = () => {
     isManualEntryMode &&
     (manualTokenRecord?.type === "lifetime" || manualTokenRecord?.lifetime === true);
   const usesApplicationFormRules = !isManualEntryMode || isLifetimeManualEntry;
-  const requiresClientDemographics = usesApplicationFormRules && !isManualEntryMode;
   const manualOfficeLocked = isSpecificManualOffice(manualTokenRecord?.office);
   const officeSelectLocked = !isManualEntryMode || manualOfficeLocked;
   const dateTimeLocked = !isManualEntryMode;
@@ -502,8 +501,8 @@ const Satisfaction = () => {
     setError("");
 
     const nonRatingValidation = {
-      clientType: requiresClientDemographics && !clientType,
-      sex: requiresClientDemographics && !sex,
+      clientType: usesApplicationFormRules && !clientType,
+      sex: usesApplicationFormRules && !sex,
       region: !region,
       officeVisited: !officeVisited,
       cc1: !ccResponses.cc1,
@@ -516,7 +515,7 @@ const Satisfaction = () => {
     const hasNonRatingErrors = Object.values(nonRatingValidation).some(Boolean);
     if (hasNonRatingErrors) {
       setError(
-        !requiresClientDemographics
+        !usesApplicationFormRules
           ? "Please complete all required fields in Region/Office and CC questions."
           : "Please complete all required fields in Client Type, Sex, Region/Office, and CC questions."
       );
